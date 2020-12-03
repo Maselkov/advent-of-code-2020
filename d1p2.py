@@ -1,6 +1,5 @@
-from os import path
-with open(f"{path.basename(__file__)[:2]}.txt") as f:
-    numbers = [int(x) for x in f.readlines()]
+import puzzleinput
+numbers = puzzleinput.numbers()
 
 for i, n in enumerate(numbers):
     for m in numbers[i:]:
