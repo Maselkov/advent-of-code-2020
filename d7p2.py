@@ -23,6 +23,5 @@ def get_bag_count(bag):
     return total
 
 
-bag_count = 0
 bag_count = get_bag_count(bags["shiny gold"])
 print(bag_count)
