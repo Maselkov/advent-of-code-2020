@@ -1,5 +1,5 @@
 import puzzleinput
-numbers = puzzleinput.numbers()
+numbers = puzzleinput.numbers
 
 for i, n in enumerate(numbers):
     for m in numbers[i:]:
