@@ -9,14 +9,15 @@ def count_active_cubes_around(x, y, z, w, cubes):
     for i in range(-1, 2):
         for j in range(-1, 2):
             for k in range(-1, 2):
-                for l in range(-1, 2):
-                    if 0 == i == j == k == l:
+                for m in range(-1, 2):
+                    if 0 == i == j == k == m:
                         continue
                     new_w = w + i
                     new_z = z + j
                     new_y = y + k
-                    new_x = x + l
-                    if new_w == -1 or new_z == -1 or new_y == -1 or new_x == -1:
+                    new_x = x + m
+                    if (new_w == -1 or new_z == -1 or new_y == -1
+                            or new_x == -1):
                         continue
                     try:
                         if cubes[new_w][new_z][new_y][new_x]:
@@ -46,16 +47,6 @@ def expand_cubes(cubes):
             new_planes.append(new_column)
         new_cubes.append(new_planes)
     return new_cubes
-
-
-def print_cubes(cubes):
-    for w, plane in enumerate(cubes):
-        for z, column in enumerate(plane):
-            print("Z=", z, "W=", w, sep="")
-            for y, row in enumerate(column):
-                for x, state in enumerate(row):
-                    print("#" if cubes[w][z][y][x] else ".", end="")
-                print()
 
 
 for _ in range(6):
